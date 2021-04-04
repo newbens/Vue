@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <my-con></my-con>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  //es6语法
+  const str = 'a' +
+      'b';
+  const s = `da
+  dada `;
+
+  //1.创建组件构造器对象
+  const cpnC = Vue.extend({
+    template: `
+      <div>
+        <h2>我是标题</h2>
+        <p>我是内容，1</p>
+        <p>我是内容，2</p>
+      </div>`
+  })
+  //2.注册
+  Vue.component('my-con',cpnC)//注册第一个参数是组件名称，第二个是组件。
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    }
+  })
+</script>
+
+</body>
+</html>

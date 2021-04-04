@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--  通过计算属性获取:计算属性会有缓存只计算第一次，后面从缓存中获取。-->
+  <h2>{{fullName}}</h2>
+  <h2>{{fullName}}</h2>
+  <h2>{{fullName}}</h2>
+  <h2>{{fullName}}</h2>
+<!--  通过methods获取-->
+  <h2>{{getFullName()}}</h2>
+  <h2>{{getFullName()}}</h2>
+  <h2>{{getFullName()}}</h2>
+  <h2>{{getFullName()}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      x: 'niu',
+      m: 'ben'
+    },
+    computed: {
+      fullName: function () {
+        console.log("计算属性");
+        return this.x + ' ' + this.m;
+      }
+    },
+    methods: {
+      getFullName: function () {
+        console.log("methods");
+        return this.x + ' ' + this.m;
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <img :src="imgUrl">
+  <a :href="hkd">好康的</a>
+<!--  v-bind语法糖直接写':'-->
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊',
+      imgUrl: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2173406241,249770295&fm=26&gp=0.jpg',
+      hkd: 'http://www.baidu.com'
+    }
+  })
+</script>
+
+</body>
+</html>

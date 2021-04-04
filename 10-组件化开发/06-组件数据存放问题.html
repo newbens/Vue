@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn></cpn>
+</div>
+<template id="tem">
+  <div>
+    <h2>{{title}}</h2>
+    <h2>组件模板</h2>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  Vue.component('cpn',{
+    template: '#tem',
+    data(){ //组件数组用函数的方式，而Vue实例是键值对的方式
+      return{
+        title: '组件数据'
+      }
+    }
+  })
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    }
+  })
+</script>
+
+</body>
+</html>

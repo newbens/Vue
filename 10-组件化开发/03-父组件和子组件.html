@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn2></cpn2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+
+  const cpnC1 = Vue.extend({
+    template: `
+      <div>
+        <h2>111</h2>
+      </div>
+    `
+  })
+  const cpnC2 = Vue.extend({
+    template: `
+      <div>
+        <h2>222</h2>
+        <son></son>
+      </div>
+    `,
+    components: {   //组件中添加组件，模板中就可以使用这个组件  cpnC2为cpnC1的父组件
+      son: cpnC1
+    }
+      },
+  )
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    },
+    components: {
+      cpn2: cpnC2
+    }
+  })
+</script>
+
+</body>
+</html>

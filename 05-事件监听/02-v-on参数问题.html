@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <button @click="btn1Click()">按钮1</button>
+  <button @click="btn1Click">按钮2</button>
+  <button @click="btn2Click(123)">按钮3</button>
+  <button @click="btn3Click">按钮4</button>
+<!--  在调用方法如果想手动获得event事件，需要在前面加$，如果直接写$会将event看成变量去data里找-->
+  <button @click="btn4Click(123,$event)">按钮5</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    },
+    methods:{
+      btn1Click() {
+        console.log("11111")
+      },
+      btn2Click(a) {
+        console.log("22222"+a)
+      },
+      btn3Click(event) {
+        console.log("event:"+event)
+      },
+      btn4Click(abc, event) {
+        console.log(abc+"==="+event);
+      }
+    }
+  })
+</script>
+
+
+</body>
+</html>

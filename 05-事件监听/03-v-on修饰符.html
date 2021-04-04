@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <div @click="divClick">
+<!--  1.stop修饰符阻止冒泡-->
+    <button @click.stop="btnClick">点我</button>
+  </div>
+<!--  2.阻止默认事件-->
+  <br>
+  <form action="baidu">
+<!--    prevent阻止了提交-->
+    <input type="submit" value="提交" @click.prevent="subClick">
+  </form>
+
+<!--  3.监听某个键的点击-->
+  <input type="text" @keyup.enter="keyUp">
+<!--  4.one修饰符的使用-->
+  <button @click.once="btn2Click">按钮2</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    },
+    methods:{
+      btnClick() {
+        console.log("BTN")
+      },
+      divClick() {
+        console.log("DIV")
+      },
+      subClick() {
+        console.log("subClick");
+      },
+      keyUp() {
+        console.log("keyUp");
+      },
+      btn2Click() {
+        console.log("btn2Click");
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

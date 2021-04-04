@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <!--  1.遍历的过程中没有使用下标值-->
+  <ul>
+    <li v-for="i in names">{{i}}</li>
+  </ul>
+  <!--  2.遍历并且拿到下标值-->
+  <ul>
+    <li v-for="(i,index) in names">{{index+1}}-{{i}}</li>
+  </ul>
+<!--  3.遍历对象-->
+  <ul>
+    <li v-for="(value,key) in info">{{key}}--{{value}}</li>
+  </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊',
+      names: ['a', 'b', 'c'],
+      info: {
+        name: '牛犇',
+        height: 172,
+        age: 23
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

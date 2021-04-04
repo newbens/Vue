@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn1></cpn1>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  //语法糖写法，不用写Vue.extend了直接写在Vue.component里面。
+  Vue.component('cpn1',{
+    template: `
+    <div>
+      <h2>1111</h2>
+      <h2>2222</h2>
+    </div>`
+  })
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    },
+    components: { //注册局部组件的语法糖
+      'cpn' : {
+        template: `
+    <div>
+      <h2>1111</h2>
+      <h2>2222</h2>
+    </div>`
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

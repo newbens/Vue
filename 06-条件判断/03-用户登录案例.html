@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--  vue在底层会复用输入框所以点击切换按钮后之前输入的信息还会存在，如果要避免复用可以给标签加-->
+<!--  一个key，如果两个标签的key相同的话才可以复用-->
+  <span v-if="byName">
+    <label for="username">用户账号</label>
+    <input type="text" id="username">
+  </span>
+  <span v-else>
+    <label for="email">用户邮箱</label>
+    <input type="text" id="email">
+  </span>
+  <button @click="byName = !byName">切换邮箱登陆</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊',
+      byName: true
+    }
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>当前技术:{{counter}}</h2>
+    <button v-on:click="inc">+</button>
+    <button v-on:click="sub">-</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            counter: 0
+        },
+        methods: {
+            inc: function () {
+                console.log("添加一个")
+                this.counter++
+            },
+            sub: function () {
+                console.log("减去一个")
+                this.counter--
+            }
+        },
+    })
+</script>
+</body>
+</html>

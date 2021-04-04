@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--  这里不支持驼峰必须用c-info-->
+  <cpn :c-info="info"></cpn>
+</div>
+
+<template id="cpn">
+  <h2>{{cInfo}}</h2>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+
+  const cpn = {
+    template: '#cpn',
+    props:{
+     cInfo:{
+       type: Object,
+       default() {
+         return {};
+       }
+     }
+    }
+  }
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      info:{
+        name: 'Kobe',
+        age: 28,
+        height: 198
+      }
+    },
+    components:{
+      cpn
+    }
+  })
+</script>
+
+</body>
+</html>

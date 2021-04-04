@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+  <ul>
+    <li v-for="i in arr">{{i}}</li>
+  </ul>
+  <button @click="btnClick">按钮</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊',
+      arr: [1, 2, 3]
+    },
+    methods:{
+      btnClick() {
+        //1.push方法
+        // this.arr.push("push")
+        //2.通过索引修改值，不是响应式的
+        // this.arr[0] = '修改';
+        //响应式的方法有： push() pop()删除末尾 shift()删除首位 unshift()数组最前面添加
+        //splice() 可以插入替换删除元素 第一个参数起始位置 第二个参数 是指删除几个 第三个就是替换
+        //例如 splice（1，3，‘a','b','c'）就是把一个后面的三个元素替换
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
